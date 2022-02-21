@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { Formik, Form, Field } from 'formik';
 import "./Header.css";
+import Container from './Container';
 
 const Header = () => {
 	const [photos, setPhotos] = useState([]);
-	console.log(photos);
 	return(
+		<div>
 		<header>
 			<Formik
 				initialValues={{ search: ''} }
@@ -24,8 +25,10 @@ const Header = () => {
 					<Field name="search" />
 				</Form>
 			</Formik>
-
 		</header>
+		<Container photos={photos}/>
+		</div>
+		
 	)
 }
 
